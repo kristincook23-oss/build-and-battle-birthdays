@@ -284,8 +284,8 @@
   }
   .tab-btn:hover { color: #e8c04a; }
   .tab-btn.active { color: #e8c04a; border-bottom: 3px solid #b8872a; }
-  .tab-content { display: none; }
-  .tab-content.active { display: block; }
+  /* tab visibility handled via inline style */
+
 
   /* ABOUT */
   .host-card { display: flex; gap: 2rem; align-items: flex-start; }
@@ -310,7 +310,7 @@
     <button class="tab-btn" onclick="showTab(this,'chronicles')">Battle Chronicles</button>
   </div>
 </nav>
-<div id="tab-home" class="tab-content active">
+<div id="tab-home" class="tab-content" style="display:block">
 <div class="page">
 
   <div class="header">
@@ -448,7 +448,7 @@
 
 </div>
 
-<div id="tab-about" class="tab-content">
+<div id="tab-about" class="tab-content" style="display:none">
   <div class="page">
     <div class="header">
       <div class="deco">&#9876; &nbsp; &#10022; &nbsp; &#9876;</div>
@@ -469,7 +469,7 @@
   </div>
 </div>
 
-<div id="tab-chronicles" class="tab-content">
+<div id="tab-chronicles" class="tab-content" style="display:none">
   <div class="page">
     <div class="header">
       <div class="deco">&#9876; &nbsp; &#10022; &nbsp; &#9876;</div>
@@ -489,9 +489,9 @@
 
 <script>
 function showTab(btn, tab) {
-  document.querySelectorAll('.tab-content').forEach(function(el) { el.classList.remove('active'); });
+  document.querySelectorAll('.tab-content').forEach(function(el) { el.style.display = 'none'; });
   document.querySelectorAll('.tab-btn').forEach(function(el) { el.classList.remove('active'); });
-  document.getElementById('tab-' + tab).classList.add('active');
+  document.getElementById('tab-' + tab).style.display = 'block';
   btn.classList.add('active');
   window.scrollTo(0, 0);
 }

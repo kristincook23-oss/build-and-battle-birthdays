@@ -285,6 +285,18 @@
   .chronicles-soon-title { font-family: 'Cinzel', serif; font-size: 16px; letter-spacing: 3px; text-transform: uppercase; color: #6b4e1a; margin-bottom: 0.75rem; }
   .chronicles-soon-sub { font-size: 16px; color: #5c3e10; font-style: italic; }
   .photo-seam { width: 4px; flex-shrink: 0; background: #0d0a05; }
+  .photo:first-child::after {
+    content: ""; position: absolute; top: 0; right: 0;
+    width: 80px; height: 100%;
+    background: linear-gradient(to right, transparent, #0d0a05);
+    z-index: 1;
+  }
+  .photo:last-child::after {
+    content: ""; position: absolute; top: 0; left: 0;
+    width: 80px; height: 100%;
+    background: linear-gradient(to left, transparent, #0d0a05);
+    z-index: 1;
+  }
 </style>
 </head>
 <body>

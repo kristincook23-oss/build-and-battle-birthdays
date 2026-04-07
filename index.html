@@ -16,7 +16,7 @@
     line-height: 1.7;
   }
 
-  .page { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .page { max-width: 980px; margin: 0 auto; padding: 2rem 1.5rem; }
 
   /* HEADER */
   .header {
@@ -259,8 +259,8 @@
   .footer-avail { font-size: 17px; color: #4d3812; font-style: italic; }
 
   /* NAV TABS */
-  .tab-nav { position: sticky; top: 0; z-index: 100; background: #0d0a05; border-bottom: 1px solid #3d2a0a; }
-  .nav-inner { max-width: 860px; margin: 0 auto; display: flex; padding: 0 1.5rem; }
+  .tab-nav { position: sticky; top: 0; z-index: 100; background: #0d0a05; border-top: 2px solid #6b4e1a; border-bottom: 1px solid #3d2a0a; }
+  .nav-inner { max-width: 980px; margin: 0 auto; display: flex; padding: 0 1.5rem; }
   .tab-btn {
     background: none; border: none; border-bottom: 3px solid transparent;
     color: #6b4e1a; font-family: 'Cinzel', serif; font-size: 12px;
@@ -287,6 +287,31 @@
   .chronicles-soon-title { font-family: 'Cinzel', serif; font-size: 16px; letter-spacing: 3px; text-transform: uppercase; color: #6b4e1a; margin-bottom: 0.75rem; }
   .chronicles-soon-sub { font-size: 16px; color: #5c3e10; font-style: italic; }
   .photo-seam { width: 4px; flex-shrink: 0; background: #0d0a05; }
+  .cta-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.7rem 2rem;
+    font-family: 'Cinzel', serif;
+    font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+    color: #1a1208; background: #e8c04a;
+    border-radius: 6px; border: none;
+    text-decoration: none; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .cta-btn:hover { background: #f5d060; }
+  .host-teaser {
+    display: flex; align-items: center; gap: 2rem;
+    padding: 1.75rem 2rem !important;
+  }
+  .host-teaser-text { flex: 1; }
+  .host-teaser-text p { font-size: 16px; color: #c8b580; line-height: 1.75; margin-bottom: 1rem; }
+  .host-teaser-link {
+    background: none; border: none; padding: 0;
+    color: #b8872a; font-family: 'Cinzel', serif;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    cursor: pointer; transition: color 0.2s;
+  }
+  .host-teaser-link:hover { color: #e8c04a; }
 </style>
 </head>
 <body>
@@ -306,6 +331,7 @@
     <div class="title">Build <span class="amp">&amp;</span> Battle<br>Birthdays</div>
     <div class="tagline">Craft your armor. Forge your shield. Fight for glory.</div>
     <div class="deco-sm">✦</div>
+    <a class="cta-btn" href="#booking">&#9876; Book Your Quest</a>
   </div>
 
   <div class="photos">
@@ -320,6 +346,14 @@
     </div>
   </div>
 
+
+  <div class="section host-teaser">
+    <div class="host-teaser-text">
+      <div class="section-title">Meet Your Host</div>
+      <p>Elliot is 14 years old and has spent most of his life building cardboard weapons, playing D&amp;D, and battling friends with NERF guns. Now he&rsquo;s channeling all of it into the most epic birthday party your kid has ever been to.</p>
+      <button class="host-teaser-link" onclick="showTab(document.querySelectorAll('.tab-btn')[1],'about')">Read Elliot&rsquo;s full story &#8594;</button>
+    </div>
+  </div>
   <div class="section">
     <div class="section-title">How It Works</div>
     <div class="steps">
@@ -417,7 +451,7 @@
     </div>
   </div>
 
-  <div class="footer">
+  <div class="footer" id="booking">
     <div class="footer-title">Book Your Quest</div>
     <div class="footer-info">
       <div class="footer-item">📞 <a href="tel:7633289496">(763) 328-9496</a></div>

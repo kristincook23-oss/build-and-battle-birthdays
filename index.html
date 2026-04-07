@@ -55,11 +55,23 @@
   .photos {
     background: #0d0a05;
     display: flex;
+    position: relative;
     height: 460px;
     margin-bottom: 2rem;
     border-radius: 10px;
     border: 1px solid #3d2a0a;
     overflow: hidden;
+  }
+  .photos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: #0d0a05;
+    z-index: 3;
   }
   .photo {
     flex: 1;
